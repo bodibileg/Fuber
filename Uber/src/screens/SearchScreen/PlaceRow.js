@@ -4,6 +4,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import styles from './styles'
 
 const PlaceRow = ({ data }) => {
+  console.log(data);
   return (
     <View style={styles.row}>
       <View style={styles.iconContainer}>
@@ -12,7 +13,7 @@ const PlaceRow = ({ data }) => {
           : <MaterialIcons name='location-pin' siz={30} color={'black'} />
         }
       </View>
-      <Text style={styles.locationText}>{data.description || data.vicinity}</Text>
+      <Text style={styles.locationText}>{data.formatted_address || data.description || data.vicinity }</Text>
     </View>
   );
 };

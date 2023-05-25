@@ -5,11 +5,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SearchScreen from '../screens/SearchScreen/SearchScreen';
 import DriveScreen from '../screens/DriveScreen';
 import RouteScreen from '../screens/RouteScreen/RouteScreen';
+import ResultScreen from '../screens/ResultScreen';
+import FoundDriver from '../screens/FoundDriverScreen';
+import NewRideScreen from '../screens/NewRideScreen';
 
 const Stack = createNativeStackNavigator();
 function HomeNavigator() {
   return (
-    <Stack.Navigator initialRouteName='Route'>
+    <Stack.Navigator initialRouteName='HomeScreen'>
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -40,6 +43,20 @@ function HomeNavigator() {
         name="Route"
         component={RouteScreen}
         // options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Result"
+        component={ResultScreen}
+      />
+      <Stack.Screen
+        name="FoundDriver"
+        component={FoundDriver}
+        options={{title: 'Your driver is coming'}}
+      />
+      <Stack.Screen
+        name="NewRide"
+        component={NewRideScreen}
+        options={{title: 'Your new ride'}}
       />
     </Stack.Navigator>
   );

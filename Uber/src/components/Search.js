@@ -3,18 +3,20 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-function SearchBar({navigation, border}) {
+function SearchBar({ handleClick}) {
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Search')}
+      onPress={handleClick}
       style={{
         backgroundColor: '#f6f5f4',
         marginHorizontal: 15,
         marginVertical: 15,
-        height: 50,
+        height: 52,
         borderRadius: 30,
         flexDirection: 'row',
         position: 'relative',
+        borderColor: 'white',
+        borderWidth: 1,
       }}>
       <View style={{marginHorizontal: 15, marginVertical: 12}}>
         <Octicons name="search" size={25} />

@@ -2,16 +2,18 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1.3,
     borderTopEndRadius: 25,
     backgroundColor: '#fff',
-    padding: 20,
+    padding: 10,
   },
   chooseButton: {
     backgroundColor: 'black',
     padding: 10,
     margin: 10,
     alignItems: 'center',
+    borderRadius: 5,
+
   },
   containerButton: {
     flexDirection: 'row',

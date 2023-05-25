@@ -1,24 +1,23 @@
-import Geolocation from '@react-native-community/geolocation';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import {Dimensions, View} from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
-const LATITUDE_DELTA = 0.04;
+const LATITUDE_DELTA = 0.03;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 function RouteMap({origin, destination}) {
 
   const originLoc = {
-    latitude: origin.details.geometry.location.lat,
-    longitude: origin.details.geometry.location.lng,
+    latitude: origin.lat,
+    longitude: origin.lng,
   };
 
   const destinationLoc = {
-    latitude: destination.details.geometry.location.lat,
-    longitude: destination.details.geometry.location.lng,
+    latitude: destination.lat,
+    longitude: destination.lng,
   };
 
   const routeLat =
@@ -45,7 +44,7 @@ function RouteMap({origin, destination}) {
       <MapViewDirections
         origin={originLoc}
         destination={destinationLoc}
-        apikey="AIzaSyCm3PzIYU_CZ4X7B0Zcn6UD-EhuEpRI7GI"
+        apikey="AIzaSyCHzecuGIkJDXXcp2DMt5Pr5qF6T5TaDnk"
         strokeWidth={5}
         strokeColor="black"
       />

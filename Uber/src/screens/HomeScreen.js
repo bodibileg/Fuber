@@ -3,6 +3,7 @@ import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchBar from '../components/Search';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const DATA = [
   {
@@ -17,13 +18,21 @@ const DATA = [
     icon: 'steering',
     destination: 'Drive',
   },
-  // {
-  //   id: '58694a0f-3da1-471f-bd96-145571e29d72',
-  //   title: 'Third Item',
-  //   image: require('../assets/images/UberX_v1.png'),
-  //   destination: 'Ride',
-  // },
 ];
+const handleItemClick = (navigation, dest) => {
+  AsyncStorage.getItem('token')
+    .then(token => {
+      if (token) {
+        navigation.navigate(dest);
+      } else {
+        navigation.navigate('Account', { screen: 'Login'});
+      }
+      // console.log(token);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
 const Item = ({title, image, navigation, dest, icon}) => (
   <View
@@ -41,7 +50,7 @@ const Item = ({title, image, navigation, dest, icon}) => (
         justifyContent: 'center',
         alignContent: 'center',
       }}
-      onPress={() => navigation.navigate(dest)}>
+      onPress={() => handleItemClick(navigation, dest)}>
       {image ? (
         <Image
           source={image}
@@ -68,7 +77,7 @@ const HomeScreen = ({navigation}) => {
         backgroundColor: 'white',
         height: '100%',
       }}>
-      <SearchBar navigation={navigation} />
+      <SearchBar handleClick={() => handleItemClick(navigation, 'Search')}/>
       <Text
         style={{
           fontSize: 24,

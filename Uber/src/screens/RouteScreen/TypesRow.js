@@ -16,7 +16,7 @@ const TypesRow = ({type, onPress, isSelected, price}) => {
       style={[
         styles.containerButton,
         {
-            borderColor: isSelected ? 'black' : 'white',
+          borderColor: isSelected ? 'black' : 'white',
         },
       ]}
       onPress={onPress}>

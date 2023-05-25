@@ -3,6 +3,8 @@ import {StatusBar, PermissionsAndroid, Platform} from 'react-native';
 import Root from './src/navigations/Root';
 import Geolocation from '@react-native-community/geolocation';
 
+navigator.geolocation = require('@react-native-community/geolocation');
+
 function App(): JSX.Element {
   const androidPermissions = async () => {
     try {

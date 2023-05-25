@@ -1,0 +1,70 @@
+# @HOST=http://localhost:8000
+@HOST=https://fuber.endpoints.compro-sa1.cloud.goog
+@SERVICE=location
+
+
+###
+GET {{HOST}}/drivers
+service: {{ SERVICE }}
+
+###
+GET {{HOST}}/drivers/fetch
+service: {{ SERVICE }}
+
+###
+POST {{HOST}}/drivers
+service: {{ SERVICE }}
+Content-Type: application/json
+
+{
+  "driver_name": "byag",
+  "device_id": "ip123",
+  "latitude": 41.00615158310451,
+  "longitude": -91.95862269226619
+}
+
+###
+POST {{HOST}}/drivers
+service: {{ SERVICE }}
+Content-Type: application/json
+
+{
+  "driver_name": "bodi",
+  "device_id": "ip123",
+  "latitude": 41.01004647948228,
+  "longitude": -91.95961347632627
+}
+
+###
+POST {{HOST}}/drivers
+service: {{ SERVICE }}
+Content-Type: application/json
+
+{
+  "driver_name": "maharishi",
+  "device_id": "ip123",
+  "latitude": 41.01835302015901,
+  "longitude": -91.96736324540723
+}
+
+###
+# Central Park (41.00710709415465, -91.9629830280811)
+# with query paramenter radius_in_mile=1
+@LATITUDE=41.00710709415465
+@LONGITUDE=-91.9629830280811
+@RADIUS_IN_MILE=1
+
+GET {{HOST}}/drivers_in_radius?latitude={{LATITUDE}}&longitude={{LONGITUDE}}&radius_in_mile={{RADIUS_IN_MILE}}
+service: {{ SERVICE }}
+
+###
+POST {{HOST}}/drivers/kafka_producer/driver-locations
+service: {{ SERVICE }}
+Content-Type: application/json
+
+{
+  "driver_name": "kafka4",
+  "device_id": "s999",
+  "latitude": 43.01835302015901,
+  "longitude": -93.96736324540723
+}

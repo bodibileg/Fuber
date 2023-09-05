@@ -8,7 +8,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [GMSServices provideAPIKey:@"AIzaSyCHzecuGIkJDXXcp2DMt5Pr5qF6T5TaDnk"]; // add this line using the api key obtained from Google Console
+  [GMSServices provideAPIKey:@"API_KEY"]; // add this line using the api key obtained from Google Console
 
   self.moduleName = @"Uber";
   // You can add your custom initial props in the dictionary below.

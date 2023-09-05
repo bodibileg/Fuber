@@ -86,7 +86,7 @@ const HomeScreen = ({navigation}) => {
           marginLeft: 15,
           marginBottom: 15,
         }}>
-        Suggestions
+        Suggestions:
       </Text>
       <FlatList
         data={DATA}

@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {BASE_URL} from '@env';
 
 const api = axios.create({
-  baseURL: 'https://fuber.endpoints.compro-sa1.cloud.goog/',
+  baseURL: 'https://fuber.endpoints.charged-curve-397317.goog/',
 });
 
 api.interceptors.request.use(async config => {

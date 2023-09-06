@@ -41,7 +41,7 @@ To set up and run Fuber on your local machine, follow these steps:
 
 Clone this repository to your local machine:
 
-git clone https://github.com/bodibileg/sa-project-uber
+git clone https://github.com/bodibileg/sa-project-uber.git
 
 Navigate to the project directory:
 

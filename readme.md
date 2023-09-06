@@ -4,7 +4,7 @@
   - [Techstacks](#Techstacks)
   - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#Screenshots)
 
 Fuber is a React Native-based academic project that replicates the functionality of a ride-sharing application like Uber. It utilizes various technologies and APIs to provide a comprehensive user experience. This README file will guide you through the project's features, setup, and usage.
 
